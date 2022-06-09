@@ -1,0 +1,29 @@
+#!/bin/sh
+
+BINDIR=/usr/local/bin
+ETCDIR=/etc
+
+# 共通関数のインストール
+if [ ! -f ${BINDIR}/functions.sh ];then
+    echo cp ./functions.sh ${BINDIR}
+    cp ./functions.sh ${BINDIR}
+fi
+
+# pop3mail.pyのインストール
+if [ ! -f ${BINDIR}/pop3mail.py ];then
+    echo cp ./pop3mail.py ${BINDIR}
+    cp ./pop3mail.py ${BINDIR}
+fi
+
+# pop3mail.shのインストール
+if [ ! -f ${BINDIR}/pop3mail.sh ];then
+    echo cp ./pop3mail.sh ${BINDIR}
+    cp ./pop3mail.sh ${BINDIR}
+    chmod 755 ${BINDIR}/pop3mail.sh
+fi
+
+# スケジュールのインストール
+if [ ! -f ${ETCDIR}/cron.d/pop3mail ];then
+    echo cp ./cron.d/pop3mail ${ETCDIR}/cron.d
+    cp ./cron.d/pop3mail ${ETCDIR}/cron.d
+fi
